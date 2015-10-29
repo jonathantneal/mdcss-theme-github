@@ -1,0 +1,32 @@
+<!doctype html>
+<title>Styleguide</title>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet">
+<script src="prism.js"></script>
+<script src="script.js"></script>
+<main class="doc-main">
+	<%
+
+	function renderSections(children, depth) {
+		children.forEach(function (child) {
+			%><section class="doc-section" id="<%= child.name %>">
+				<h<%= depth %> class="doc-section-heading"><%= child.title %></h<%= depth %>>
+
+				<div class="doc-section-content">
+					<%- child.content %>
+					<%
+
+					if (child.children) {
+						renderSections(child.children, depth + 1);
+					}
+
+					%>
+				</div>
+			</section><%
+		});
+	}
+
+	renderSections(children, 1);
+
+	%>
+</main>

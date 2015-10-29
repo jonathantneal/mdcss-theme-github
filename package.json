@@ -1,0 +1,37 @@
+{
+  "name": "mdcss-theme-github",
+  "version": "0.3.0",
+  "description": "GitHub theme for mdcss",
+  "keywords": [
+    "mdcss",
+    "mdcss-theme",
+    "github",
+    "theme"
+  ],
+  "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathantneal/mdcss-github-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathantneal/mdcss-github-theme/issues"
+  },
+  "homepage": "https://github.com/jonathantneal/mdcss-github-theme#readme",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "fs-extra": "^0.26.0",
+    "fs-promise": "^0.3.1",
+    "fs-wishlist": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.7.3"
+  },
+  "scripts": {
+    "test": "eslint . --ignore-path .jshintignore"
+  },
+  "engines": {
+    "iojs": ">=2.0.0",
+    "node": ">=0.12.0"
+  }
+}
