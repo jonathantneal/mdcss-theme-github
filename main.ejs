@@ -4,60 +4,74 @@
 <link href="style.css" rel="stylesheet">
 <script src="prism.js"></script>
 <script src="script.js"></script>
-<main class="doc-main">
-	<%
+<header>
+	<nav>
+		<img src="<%- options.logo || 'https://i.imgur.com/3rqeZXi.png' %>" alt="Style Guide">
+		<%
 
-	function renderNavigation(children) { %>
-		<nav>
-			<ul>
-				<% children.forEach(function (child) {
-					if (child.name) { %>
+		function renderNavigation(children, depth) { %>
+			<ul><%
+
+				if (depth < 3) children.forEach(function (child) {
+					if (child.name) {
+
+						%>
 						<li>
 							<a href="#<%- child.name %>"><%- child.title %></a>
+							<%
+
+							if (child.children.length) renderNavigation(child.children, depth + 1);
+
+							%>
 						</li>
-					<% }
-				}); %>
-			</ul>
-		</nav>
-	<% }
-
-	function renderSections(children, depth) {
-		children.forEach(function (child) {
-			if (child.name) { %>
-				<section class="doc-section" id="<%= child.name %>">
-					<h<%= depth %> class="doc-section-heading"><%= child.title %></h<%= depth %>>
-
-					<div class="doc-section-content">
-						<%- child.content %>
 						<%
 
-						if (child.children) {
-							renderSections(child.children, depth + 1);
-						}
+					}
+				});
 
-						%>
-					</div>
-				</section>
-			<% } else { %>
-				<section class="doc-section">
-					<div class="doc-section-content">
-						<%- child.content %>
-						<%
+			%></ul>
+		<% }
 
-						if (child.children) {
-							renderSections(child.children, depth + 1);
-						}
+		renderNavigation(children, 1);
+		%>
+	</nav>
+</header>
+<main><%
 
-						%>
-					</div>
-				</section>
-			<% }
-		});
-	}
+function renderSections(children, depth) {
+	children.forEach(function (child) {
+		if (child.name) { %>
+			<section id="<%= child.name %>">
+				<h<%= depth %> class="doc-section-heading"><%= child.title %></h<%= depth %>>
 
-	renderNavigation(children);
+				<div>
+					<%- child.content %>
+					<%
 
-	renderSections(children, 2);
+					if (child.children) {
+						renderSections(child.children, depth + 1);
+					}
 
-	%>
-</main>
+					%>
+				</div>
+			</section>
+		<% } else { %>
+			<section>
+				<div>
+					<%- child.content %>
+					<%
+
+					if (child.children) {
+						renderSections(child.children, depth + 1);
+					}
+
+					%>
+				</div>
+			</section>
+		<% }
+	});
+}
+
+renderSections(children, 2);
+
+%></main>

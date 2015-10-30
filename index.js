@@ -13,6 +13,8 @@ module.exports = function (opts) {
 		var assets   = path.join(__dirname, 'assets');
 		var template = path.join(__dirname, opts.template + '.ejs');
 
+		documentation.options = opts;
+
 		return Promise.all([
 			fs.copy(assets, destination),
 			fs.readFile(template, 'utf8').then(function (contents) {

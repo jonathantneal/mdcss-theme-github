@@ -1,0 +1,254 @@
+<!doctype html>
+<title>Style Guide</title>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet">
+<script src="prism.js"></script>
+<script src="script.js"></script>
+<header>
+	<nav>
+		<img src="https://i.imgur.com/3rqeZXi.png" alt="Style Guide">
+		
+			<ul>
+						<li>
+							<a href="#overview">Overview</a>
+							
+			<ul>
+						<li>
+							<a href="#logos">Logos</a>
+							
+						</li>
+						
+						<li>
+							<a href="#colors">Colors</a>
+							
+						</li>
+						
+						<li>
+							<a href="#typography">Typography</a>
+							
+			<ul></ul>
+		
+						</li>
+						
+						<li>
+							<a href="#iconography">Iconography</a>
+							
+						</li>
+						</ul>
+		
+						</li>
+						
+						<li>
+							<a href="#layout">Layout</a>
+							
+						</li>
+						
+						<li>
+							<a href="#visual-language">Visual Language</a>
+							
+			<ul>
+						<li>
+							<a href="#hero">Hero</a>
+							
+						</li>
+						
+						<li>
+							<a href="#figure">Figure</a>
+							
+						</li>
+						
+						<li>
+							<a href="#blockquote">Blockquote</a>
+							
+						</li>
+						
+						<li>
+							<a href="#media">Media</a>
+							
+						</li>
+						
+						<li>
+							<a href="#aspect">Aspect</a>
+							
+						</li>
+						</ul>
+		
+						</li>
+						</ul>
+		
+	</nav>
+</header>
+<main>
+			<section>
+				<div>
+					<h1 id="style-guide">Style Guide</h1>
+<p>This style guide describes the GitHub theme for mdcss and uses its own
+CSS to generate this theme.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="overview">
+				<h2 class="doc-section-heading">Overview</h2>
+
+				<div>
+					<p>This theme is divided into 3 parts. The <strong>markup</strong> is found inside <code>main.ejs</code>
+and contains the framework used to build out the logo, navigation, and main
+content. The <strong>style</strong> is found inside <code>assets/style.css</code> and contains the
+styles you see around you. The <strong>script</strong> is found inside <code>assets/script.js</code>
+and uses <a href="http://prismjs.com/">prism</a> to accomplish syntax highlighting within
+code blocks.</p>
+
+					
+			<section id="logos">
+				<h3 class="doc-section-heading">Logos</h3>
+
+				<div>
+					<p>The theme logo may be configured by setting the <code>logo</code> option.</p>
+<pre><code class="lang-js">require(&#39;mdcss&#39;)({
+    theme: require(&#39;mdcss-theme-github&#39;)({
+        logo: &#39;path/to/my/logo.svg&#39;
+    })
+});
+</code></pre>
+
+					
+				</div>
+			</section>
+		
+			<section id="colors">
+				<h3 class="doc-section-heading">Colors</h3>
+
+				<div>
+					<p>The site uses a white <code>#fff</code> background and mine shaft <code>#333</code> text color.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="typography">
+				<h3 class="doc-section-heading">Typography</h3>
+
+				<div>
+					<p>This theme uses a common Helvetica font stack with a relative line height of
+1.6 times the font size.</p>
+
+					
+			<section id="headings">
+				<h4 class="doc-section-heading">Headings</h4>
+
+				<div>
+					<p>Headings match GitHub documentation conventions. In this theme, you can add
+<code>_example</code> to your code blocks to add a living example to your style guide.</p>
+<pre><code class="lang-html_example">&lt;h1&gt;Heading Level 1&lt;/h1&gt;
+&lt;h2&gt;Heading Level 2&lt;/h2&gt;
+&lt;h3&gt;Heading Level 3&lt;/h3&gt;
+&lt;h4&gt;Heading Level 4&lt;/h4&gt;
+&lt;h5&gt;Heading Level 5&lt;/h5&gt;
+&lt;h6&gt;Heading Level 6&lt;/h6&gt;
+</code></pre>
+
+					
+				</div>
+			</section>
+		
+				</div>
+			</section>
+		
+			<section id="iconography">
+				<h3 class="doc-section-heading">Iconography</h3>
+
+				<div>
+					<p>This site has no icongraphy.</p>
+
+					
+				</div>
+			</section>
+		
+				</div>
+			</section>
+		
+			<section id="layout">
+				<h2 class="doc-section-heading">Layout</h2>
+
+				<div>
+					<p>We use flex to horizontally stack the heading and main content areas.
+The navigation uses fixed position to stay on the screen as you scroll.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="visual-language">
+				<h2 class="doc-section-heading">Visual Language</h2>
+
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores
+temporibus beatae fugit totam pariatur, aliquam commodi consequuntur id error
+ipsam suscipit quas doloremque perferendis quam! Ullam, debitis ab maiores.</p>
+
+					
+			<section id="hero">
+				<h3 class="doc-section-heading">Hero</h3>
+
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores
+temporibus beatae fugit totam pariatur, aliquam commodi consequuntur id error
+ipsam suscipit quas doloremque perferendis quam! Ullam, debitis ab maiores.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="figure">
+				<h3 class="doc-section-heading">Figure</h3>
+
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores
+temporibus beatae fugit totam pariatur, aliquam commodi consequuntur id error
+ipsam suscipit quas doloremque perferendis quam! Ullam, debitis ab maiores.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="blockquote">
+				<h3 class="doc-section-heading">Blockquote</h3>
+
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores
+temporibus beatae fugit totam pariatur, aliquam commodi consequuntur id error
+ipsam suscipit quas doloremque perferendis quam! Ullam, debitis ab maiores.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="media">
+				<h3 class="doc-section-heading">Media</h3>
+
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores
+temporibus beatae fugit totam pariatur, aliquam commodi consequuntur id error
+ipsam suscipit quas doloremque perferendis quam! Ullam, debitis ab maiores.</p>
+
+					
+				</div>
+			</section>
+		
+			<section id="aspect">
+				<h3 class="doc-section-heading">Aspect</h3>
+
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis asperiores
+temporibus beatae fugit totam pariatur, aliquam commodi consequuntur id error
+ipsam suscipit quas doloremque perferendis quam! Ullam, debitis ab maiores.</p>
+
+					
+				</div>
+			</section>
+		
+				</div>
+			</section>
+		</main>
