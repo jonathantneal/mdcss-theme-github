@@ -1,6 +1,6 @@
 {
   "name": "mdcss-theme-github",
-  "version": "0.8.1",
+  "version": "1.0.0",
   "description": "GitHub flavored theme for mdcss",
   "keywords": [
     "mdcss",
@@ -25,14 +25,14 @@
     "fs-wishlist": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "^1.7.3",
+    "eslint": "^1.8.0",
     "mdcss": "^0.7.1",
     "postcss": "^5.0.10",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.2"
   },
   "scripts": {
-    "lint": "eslint . --ignore-path .jshintignore",
+    "lint": "eslint . --ignore-path .eshintignore",
     "test-fixtures": "tape test.js | tap-spec",
     "test": "npm run lint && npm run test-fixtures"
   },

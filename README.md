@@ -1,14 +1,14 @@
-# GitHub Theme
+# mdcss GitHub
 
 <img align="right" width="96" height="96" src="https://i.imgur.com/3rqeZXi.png" title="logo of mdcss">
 
-[![NPM Version][npm-img]][npm]
+[![NPM Version][npm-img]][npm] [![Build Status][ci-img]][ci]
 
-[GitHub Theme] is a theme for [mdcss]. It is based on the documentation styles seen across GitHub.
+[mdcss GitHub] is a theme for [mdcss] based on the documentation styles seen across GitHub.
 
 ## Usage
 
-Add [mdcss] and [GitHub Theme] to your build tool:
+Add [mdcss] and [mdcss GitHub] to your build tool:
 
 ```bash
 npm install mdcss --save-dev
@@ -25,6 +25,13 @@ require('mdcss')({
 
 ## Options
 
+#### `title`
+
+Type: `String`  
+Default: `'Style Guide'`
+
+The title to be used by the style guide.
+
 #### `template`
 
 Type: `String`  
@@ -39,8 +46,10 @@ Default: `'index.html'`
 
 The complete name of the main file that you would like generated inside the style guide directory.
 
+[ci]:      https://travis-ci.org/jonathantneal/mdcss-theme-github
+[ci-img]:  https://img.shields.io/travis/jonathantneal/mdcss-theme-github.svg
 [npm]:     https://www.npmjs.com/package/mdcss-theme-github
 [npm-img]: https://img.shields.io/npm/v/mdcss-theme-github.svg
 [mdcss]:   https://github.com/jonathantneal/mdcss
 
-[GitHub Theme]: https://github.com/jonathantneal/mdcss-theme-github
+[mdcss GitHub]: https://github.com/jonathantneal/mdcss-theme-github
