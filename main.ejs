@@ -7,6 +7,20 @@
 <main class="doc-main">
 	<%
 
+	function renderNavigation(children, depth) { %>
+		<nav>
+			<ul>
+				<% children.forEach(function (child) {
+					if (child.name) { %>
+						<li>
+							<a href="#<%- child.name %>"><%- child.title %></a>
+						</li>
+					<% }
+				}); %>
+			</ul>
+		</nav>
+	<% }
+
 	function renderSections(children, depth) {
 		children.forEach(function (child) {
 			if (child.name) { %>
@@ -40,6 +54,8 @@
 			<% }
 		});
 	}
+
+	renderNavigation(children, 1);
 
 	renderSections(children, 1);
 

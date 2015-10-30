@@ -100,6 +100,20 @@ a {
 	text-decoration: none;
 }
 
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li + li::before {
+	content: " | ";
+	opacity: .25;
+}
+
 a:hover, a:active {
 	text-decoration: underline;
 }
