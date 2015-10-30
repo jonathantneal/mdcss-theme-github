@@ -1,5 +1,5 @@
 <!doctype html>
-<title>Styleguide</title>
+<title>Style Guide</title>
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet">
 <script src="prism.js"></script>
@@ -9,20 +9,35 @@
 
 	function renderSections(children, depth) {
 		children.forEach(function (child) {
-			%><section class="doc-section" id="<%= child.name %>">
-				<h<%= depth %> class="doc-section-heading"><%= child.title %></h<%= depth %>>
+			if (child.name) { %>
+				<section class="doc-section" id="<%= child.name %>">
+					<h<%= depth %> class="doc-section-heading"><%= child.title %></h<%= depth %>>
 
-				<div class="doc-section-content">
-					<%- child.content %>
-					<%
+					<div class="doc-section-content">
+						<%- child.content %>
+						<%
 
-					if (child.children) {
-						renderSections(child.children, depth + 1);
-					}
+						if (child.children) {
+							renderSections(child.children, depth + 1);
+						}
 
-					%>
-				</div>
-			</section><%
+						%>
+					</div>
+				</section>
+			<% } else { %>
+				<section class="doc-section">
+					<div class="doc-section-content">
+						<%- child.content %>
+						<%
+
+						if (child.children) {
+							renderSections(child.children, depth + 1);
+						}
+
+						%>
+					</div>
+				</section>
+			<% } %>
 		});
 	}
 
