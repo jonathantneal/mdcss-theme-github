@@ -7,7 +7,7 @@
 <main class="doc-main">
 	<%
 
-	function renderNavigation(children, depth) { %>
+	function renderNavigation(children) { %>
 		<nav>
 			<ul>
 				<% children.forEach(function (child) {
@@ -55,9 +55,9 @@
 		});
 	}
 
-	renderNavigation(children, 1);
+	renderNavigation(children);
 
-	renderSections(children, 1);
+	renderSections(children, 2);
 
 	%>
 </main>
