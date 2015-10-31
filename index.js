@@ -1,5 +1,5 @@
 var ejs  = require('ejs');
-var fs   = require('fs-wishlist').mixin(require('fs-promise'));
+var fs   = require('fs-promise');
 var path = require('path');
 
 module.exports = function (opts) {
