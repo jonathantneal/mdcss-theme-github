@@ -30,21 +30,16 @@ require('mdcss')({
 Type: `String`  
 Default: `'Style Guide'`
 
-The title to be used by the style guide.
+The page title to be used by the style guide.
 
-#### `template`
-
-Type: `String`  
-Default: `'main'`
-
-The template within the GitHub theme that you would like to use.
-
-#### `index`
+#### `logo`
 
 Type: `String`  
-Default: `'index.html'`
+Default: `'https://i.imgur.com/3rqeZXi.png'`
 
-The complete name of the main file that you would like generated inside the style guide directory.
+<img src="https://i.imgur.com/3rqeZXi.png" width="96" height="96">
+
+The page logo to be used by the style guide.
 
 [ci]:      https://travis-ci.org/jonathantneal/mdcss-theme-github
 [ci-img]:  https://img.shields.io/travis/jonathantneal/mdcss-theme-github.svg
