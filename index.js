@@ -1,28 +1,41 @@
 var ejs  = require('ejs');
-var fs   = require('fs-promise');
+var fs   = require('fs');
 var path = require('path');
 
-module.exports = function (opts) {
-	opts = opts || {};
+module.exports = function (themeopts) {
+	// set theme options object
+	themeopts = Object(themeopts);
 
-	opts.template  = opts.template || 'main';
-	opts.index     = opts.index    || 'index.html';
+	// set theme logo
+	themeopts.logo = themeopts.logo || 'https://i.imgur.com/3rqeZXi.png';
 
-	return function (documentation, destination) {
-		var index    = path.join(destination, opts.index);
-		var assets   = path.join(__dirname, 'assets');
-		var template = path.join(__dirname, opts.template + '.ejs');
+	// set theme title
+	themeopts.title = themeopts.title || 'Style Guide';
 
-		documentation.options = opts;
+	// return theme
+	return function (docs) {
+		// set assets directory and template
+		docs.assets   = path.join(__dirname, 'assets');
+		docs.template = path.join(__dirname, 'template.ejs');
 
-		return Promise.all([
-			fs.copy(assets, destination),
-			fs.readFile(template, 'utf8').then(function (contents) {
-				var compiled = ejs.compile(contents)(documentation);
+		// set theme options
+		docs.themeopts = themeopts;
 
-				return fs.writeFile(index, compiled);
-			})
-		]);
+		// return promise
+		return new Promise(function (resolve, reject) {
+			// read template
+			fs.readFile(docs.template, 'utf8', function (error, contents) {
+				// throw if template could not be read
+				if (error) reject(error);
+				else {
+					// set compiled template
+					docs.template = ejs.compile(contents)(docs);
+
+					// resolve docs
+					resolve(docs);
+				}
+			});
+		});
 	};
 };
 

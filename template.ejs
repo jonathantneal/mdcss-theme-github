@@ -1,12 +1,12 @@
 <!doctype html>
-<title><%- options.title || 'Style Guide' %></title>
+<title><%- opts.title || themeopts.title %></title>
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet">
 <script src="prism.js"></script>
 <script src="script.js"></script>
 <header>
 	<nav>
-		<img src="<%- options.logo || 'https://i.imgur.com/3rqeZXi.png' %>" alt="Style Guide">
+		<img src="<%- opts.logo || themeopts.logo %>" alt="Style Guide">
 		<%
 
 		function renderNavigation(children, depth) { %>
@@ -17,10 +17,10 @@
 
 						%>
 						<li>
-							<a href="#<%- child.name %>"><%- child.title %></a>
+							<a href="#<%- child.name %>"><span><%- child.title %></span></a>
 							<%
 
-							if (child.children.length) renderNavigation(child.children, depth + 1);
+							if (child.children) renderNavigation(child.children, depth + 1);
 
 							%>
 						</li>
@@ -32,7 +32,7 @@
 			%></ul>
 		<% }
 
-		renderNavigation(children, 1);
+		renderNavigation(list, 1);
 		%>
 	</nav>
 </header>
@@ -72,6 +72,6 @@ function renderSections(children, depth) {
 	});
 }
 
-renderSections(children, 2);
+renderSections(list, 2);
 
 %></main>
