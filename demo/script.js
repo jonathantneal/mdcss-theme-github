@@ -3,24 +3,17 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	Array.prototype.forEach.call(document.querySelectorAll('pre code'), function (code) {
-		var hasExample = code.className.match(/(?:^|\s)lang-(\w+)_example(?:\s|$)/) && true || false;
-		var language   = (code.className.match(/(?:^|\s)lang-(\w+?)(?:_example|\s|$)/) || [])[1];
+		var match = code.className.match(/(?:^|\s)lang-(\w+?)(_example|\s|$)/) || [];
+		var lang  = match[1];
+		var demo  = !!match[2];
+		var text  = code.innerText;
 
-		var html = code.innerText;
-
-		if (language && language in Prism.languages) {
-			code.innerHTML = Prism.highlight(html, Prism.languages[language]);
+		if (lang && lang in Prism.languages) {
+			code.innerHTML = Prism.highlight(text, Prism.languages[lang]);
 		}
 
-		if (hasExample) {
-			var example = document.createElement('div');
-
-			example.className = 'example';
-
-			example.innerHTML = html;
-
-			code.parentNode.parentNode.insertBefore(example, code.parentNode);
+		if (demo && lang in examples) {
+			examples[lang](text, code);
 		}
 	});
 });
-
