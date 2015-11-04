@@ -76,4 +76,28 @@ function renderSections(children, depth) {
 
 renderSections(list, 2);
 
-%></main>
+%>
+<footer>
+	<p><%
+
+	var now = new Date();
+
+	var monthNames = 'January February March April May June July August September October November December'.split(' ');
+
+	var dayNames = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ');
+
+	var date = now.getDate();
+
+	var day = dayNames[now.getDay()];
+
+	var month = monthNames[now.getMonth()];
+
+	var year = now.getFullYear();
+
+	var hour = now.getHours();
+
+	var mins = now.getMinutes();
+
+	%><%= day %>, <%= date %> <%= month %>, <%= year %> <%= hour %>:<%= mins %></p>
+</footer>
+</main>

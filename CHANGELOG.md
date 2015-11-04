@@ -1,3 +1,8 @@
+## 1.2.1 (2015-11-04)
+
+- Added: Last updated footer
+- Updated: watch functionality
+
 ## 1.2.0 (2015-11-04)
 
 - Added: `color_example` code block

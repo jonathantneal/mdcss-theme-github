@@ -1,6 +1,6 @@
 {
   "name": "mdcss-theme-github",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "GitHub flavored theme for mdcss",
   "keywords": [
     "mdcss",
@@ -36,7 +36,10 @@
     "watch": "tape watch.js"
   },
   "watch": {
-    "test-fixtures": "assets/*"
+    "test": [
+    	"assets",
+    	"template.ejs"
+    ]
   },
   "engines": {
     "iojs": ">=2.0.0",
