@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		var match = code.className.match(/(?:^|\s)lang-(\w+?)(_example|\s|$)/) || [];
 		var lang  = match[1];
 		var demo  = !!match[2];
-		var text  = code.innerText;
+		var text  = String(code.textContent || code.innerText || '');
 
 		if (lang && lang in Prism.languages) {
 			code.innerHTML = Prism.highlight(text, Prism.languages[lang]);
