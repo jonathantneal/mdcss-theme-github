@@ -41,6 +41,13 @@ Default: `'https://i.imgur.com/3rqeZXi.png'`
 
 The page logo to be used by the style guide.
 
+#### `exampleCSS`
+
+Type: `String`  
+Default: `'style.css'`
+
+The stylesheet to be used by HTML examples.
+
 [ci]:      https://travis-ci.org/jonathantneal/mdcss-theme-github
 [ci-img]:  https://img.shields.io/travis/jonathantneal/mdcss-theme-github.svg
 [npm]:     https://www.npmjs.com/package/mdcss-theme-github

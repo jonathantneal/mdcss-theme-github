@@ -12,6 +12,9 @@ module.exports = function (themeopts) {
 	// set theme title
 	themeopts.title = themeopts.title || 'Style Guide';
 
+	// set example css
+	themeopts.exampleCSS = themeopts.exampleCSS || 'style.css';
+
 	// return theme
 	return function (docs) {
 		// set assets directory and template

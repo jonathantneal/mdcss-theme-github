@@ -1,3 +1,7 @@
+## 1.3.0 (2015-11-09)
+
+- Added: Option to specify `exampleCSS` file used by examples
+
 ## 1.2.1 (2015-11-04)
 
 - Added: Last updated footer
