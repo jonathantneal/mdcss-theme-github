@@ -1,3 +1,7 @@
+## 1.3.2 (2015-11-09)
+
+- Updated: Improvements to iframe resizing
+
 ## 1.3.1 (2015-11-09)
 
 - Updated: Example iframes use transparent background

@@ -26,6 +26,8 @@ this.examples.html = (function () {
 
 			icss.rel  = 'stylesheet';
 			icss.href = exampleCSS;
+
+			icss.addEventListener('load', setMinHeight);
 		}
 
 		// add default block styles to iframe dom
@@ -35,7 +37,13 @@ this.examples.html = (function () {
 		// add example HTML to iframe dom
 		idoc.body.innerHTML = input;
 
-		// set iframe height based on content
-		iframe.style.minHeight = idoc.documentElement.offsetHeight + (iframe.offsetHeight - iwin.innerHeight) + 'px';
+		setMinHeight();
+
+		function setMinHeight() {
+			// set iframe height based on content
+			iframe.style.minHeight = 0;
+
+			iframe.style.minHeight = idoc.documentElement.scrollHeight + (iframe.offsetHeight - iwin.innerHeight) + 'px';
+		}
 	};
 })();
