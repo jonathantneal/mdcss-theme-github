@@ -20,30 +20,27 @@ this.examples.html = (function () {
 		var iwin = iframe.contentWindow;
 		var idoc = iwin.document;
 
+		// add example HTML to iframe dom
+		idoc.open();
+
 		// conditionally append example css as stylesheet
-		if (exampleCSS) {
-			var icss = idoc.head.appendChild(idoc.createElement('link'));
+		if (exampleCSS) idoc.write('<link href="' + exampleCSS + '" rel="stylesheet">');
 
-			icss.rel  = 'stylesheet';
-			icss.href = exampleCSS;
+		idoc.write(input);
 
-			icss.addEventListener('load', setMinHeight);
-		}
+		idoc.close();
 
 		// add default block styles to iframe dom
 		idoc.documentElement.setAttribute('style', iframeCSS);
 		idoc.body.setAttribute('style', iframeCSS);
 
-		// add example HTML to iframe dom
-		idoc.body.innerHTML = input;
-
-		setMinHeight();
-
-		function setMinHeight() {
-			// set iframe height based on content
+		// set iframe height based on content
+		iwin.onload = function () {
 			iframe.style.minHeight = 0;
 
 			iframe.style.minHeight = idoc.documentElement.scrollHeight + (iframe.offsetHeight - iwin.innerHeight) + 'px';
-		}
+		};
+
+		iwin.onload();
 	};
 })();

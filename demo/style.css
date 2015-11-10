@@ -375,6 +375,7 @@ nav > ul > li > a > span {
 .example {
 	box-shadow: inset 0 0 0 3px #f7f7f7;
 	border-radius: 3px;
+	height: 32px;
 	overflow: auto;
 	margin: 0;
 	padding: 16px;

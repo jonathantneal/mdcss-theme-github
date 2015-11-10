@@ -1,3 +1,7 @@
+## 1.3.4 (2015-11-09)
+
+- Updated: Improvements to iframe resizing
+
 ## 1.3.3 (2015-11-09)
 
 - Updated: Use mdcss 1.2.0
