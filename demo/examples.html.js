@@ -2,7 +2,7 @@ this.examples = this.examples || {};
 
 this.examples.html = (function () {
 	// default block styles for iframe dom
-	var iframeCSS = 'border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto';
+	var iframeCSS = 'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto';
 
 	// example css path
 	var exampleCSS = document.getElementById('example-css').href;
