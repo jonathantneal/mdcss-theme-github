@@ -7,13 +7,21 @@ module.exports = function (themeopts) {
 	themeopts = Object(themeopts);
 
 	// set theme logo
-	themeopts.logo = themeopts.logo || 'https://i.imgur.com/3rqeZXi.png';
+	themeopts.logo = themeopts.logo || 'mdcss-logo.png';
 
 	// set theme title
 	themeopts.title = themeopts.title || 'Style Guide';
 
-	// set example css
-	themeopts.exampleCSS = themeopts.exampleCSS || 'style.css';
+	// set example conf
+	themeopts.examples = themeopts.examples || {
+		base:    '',
+		target:  '_self',
+		css:     ['style.css'],
+		js:      [],
+		bodyjs:  [],
+		htmlcss: 'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto',
+		bodycss: 'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto'
+	};
 
 	// return theme
 	return function (docs) {

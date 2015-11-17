@@ -7,7 +7,7 @@ var test    = require('tape');
 test('mdcss-theme-github', function (t) {
 	t.plan(1);
 
-	var message = 'Test GitHub theme for mdcss';
+	var message = 'Test mdcss GitHub';
 	var options = { theme: plugin({ title: 'mdcss GitHub' }), destination: 'demo' };
 	var warning = 0;
 	var warningMsg = message + ' (# of warnings)';

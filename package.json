@@ -1,6 +1,6 @@
 {
   "name": "mdcss-theme-github",
-  "version": "1.3.4",
+  "version": "2.0.0",
   "description": "GitHub flavored theme for mdcss",
   "keywords": [
     "mdcss",
@@ -31,8 +31,8 @@
   },
   "scripts": {
     "lint": "eslint . --ignore-path .eshintignore",
-    "test-fixtures": "tape test.js | tap-spec",
-    "test": "npm run lint && npm run test-fixtures",
+    "tape": "tape test.js | tap-spec",
+    "test": "npm run lint && npm run tape",
     "watch": "tape watch.js"
   },
   "watch": {

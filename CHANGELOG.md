@@ -1,3 +1,10 @@
+## 2.0.0 (2015-11-17)
+
+- Added: Options to control example
+- Updated: Examples syntax
+- Updated: Documentation
+- Updated: mdcss logo
+
 ## 1.3.4 (2015-11-09)
 
 - Updated: Improvements to iframe resizing
