@@ -160,31 +160,31 @@ An `example:html` code block
 generates an iframe using the contents of the code block, followed by the
 original code block. For example:
 
-```css
-`​``example:html
-<button>Let’s see what this looks like</button>
-`​``
+````css
+```example:html
+<button>This is a button</button>
 ```
+````
 
 is rendered as:
 
 ```example:html
-<button>Let’s see what this looks like</button>
+<button>This is a button</button>
 ```
 
 An `example` code block generates an iframe using the contents of the code
 block without also rendering the original code block. For example:
 
-```css
-`​``example
-<button>Let’s see what this looks like</button>
-`​``
+````css
+```example
+<button>This is a button</button>
 ```
+````
 
 is rendered as:
 
 ```example
-<button>Let’s see what this looks like</button>
+<button>This is a button</button>
 ```
 
 */
@@ -196,8 +196,8 @@ section: Overview
 
 Color examples are generated with `example:color` code blocks. For example:
 
-```css
-`​``example:color
+````css
+```example:color
 @color: #ffffff @name: White
 @color: #f8f8f8 @name: White Smoke
 @color: #e7e7e7 @name: Whisper
@@ -205,8 +205,8 @@ Color examples are generated with `example:color` code blocks. For example:
 @color: #565454 @name: Matterhorn
 @color: #4078c0 @name: Steel Blue
 @color: #333333 @name: Night Rider
-`​``
 ```
+````
 
 is rendered as:
 
@@ -322,8 +322,7 @@ title:   Headings
 section: Typography
 ---
 
-Headings match GitHub documentation conventions. In this theme, you can add
-`_example` to your code blocks to add a living example to your style guide.
+Headings match GitHub documentation conventions.
 
 ```example:html
 <h1>Heading Level 1</h1>
@@ -339,7 +338,7 @@ h1 {
 	font-size: 2.25em;
 	line-height: 1.2;
 	border-bottom: 1px solid #eee;
-	margin-bottom: 1rem;
+	margin-bottom: 16px;
 	margin-top: 1em;
 	padding-bottom: .3em;
 }
@@ -380,10 +379,44 @@ h6 {
 
 code {
 	border-radius: 3px;
+	display: inline-block;
 	font-family: "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
 	font-size: 85%;
-	margin: 0;
-	padding: .2em 0;
+	margin: -.1em 0;
+	max-width: 100%;
+	overflow: auto;
+	padding: .1em;
+	vertical-align: text-top;
+}
+
+button {
+	background-color: #eeeeee;
+	background-image: linear-gradient(#fcfcfc, #eeeeee);
+	border: 1px solid #d5d5d5;
+	border-radius: 3px;
+	color: #333333;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 81.25%;
+	font-weight: bold;
+	line-height: 1.538462;
+	outline: 0;
+	padding: 6px 12px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+button:focus, button:hover {
+	background-color: #dddddd;
+	background-image: linear-gradient(#eeeeee, #dddddd);
+	border-color: #cccccc;
+}
+
+button:active {
+	background-color: #dcdcdc;
+	background-image: none;
+	border-color: #b5b5b5;
+	box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
 }
 
 /*---
@@ -464,6 +497,11 @@ a {
 	color: #4078c0;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+footer {
+	color: #767676;
+	font-size: .75rem;
 }
 
 a:hover, a:active {

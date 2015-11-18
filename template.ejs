@@ -1,11 +1,11 @@
 <!doctype html>
-<title><%- opts.title || themeopts.title %></title>
+<title><%- opts.title %></title>
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet">
-<script>examples={opts:<%- JSON.stringify(opts.examples || themeopts.examples) %>}</script>
+<script>examples=<%- JSON.stringify(opts.examples) %>;</script>
 <header>
 	<nav>
-		<img src="<%= opts.logo || themeopts.logo %>" alt="<%= opts.title || themeopts.title %>">
+		<img src="<%= opts.logo %>" alt="<%= opts.title %>">
 		<% menu(list, 1) %>
 	</nav>
 </header>
@@ -59,7 +59,7 @@ function lastModified() {
 
 	var month = 'January February March April May June July August September October November December'.split(' ')[now.getMonth()];
 
-	return day + ', ' + now.getDate() + ' ' + month + ' ' + now.getFullYear() + ' ' + now.getHours() + ':' + now.getMinutes();
+	return day + ', ' + now.getDate() + ' ' + month + ' ' + now.getFullYear() + ' ' + now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
 }
 
 %>

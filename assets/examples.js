@@ -72,9 +72,8 @@ examples.lang = {
 		}
 	},
 	html: function (pre, value, conf) {
-		// get wrap and opts
+		// get wrap
 		var wrap = pre.parentNode;
-		var opts = examples.opts;
 
 		var iframe = wrap.insertBefore(document.createElement('iframe'), pre);
 		var style  = iframe.style;
@@ -83,26 +82,26 @@ examples.lang = {
 		var iwin = iframe.contentWindow;
 		var idoc = iwin.document;
 
-		// add example HTML to iframe dom
+		// write example content to iframe
 		idoc.open();
 
 		var html = '<base' + (
-			opts.base && ' href="' + opts.base + '"'
+			examples.base && ' href="' + examples.base + '"'
 		) + (
-			opts.target && ' target="' + opts.target + '"'
+			examples.target && ' target="' + examples.target + '"'
 		) + '>';
 
-		html += opts.css.map(function (css) {
+		html += examples.css.map(function (css) {
 			return '<link href="' + css + '" rel="stylesheet">';
 		}).join('');
 
-		html += opts.js.map(function (js) {
+		html += examples.js.map(function (js) {
 			return '<script src="' + js + '"></script>';
 		}).join('');
 
 		html += value;
 
-		html += opts.bodyjs.map(function (js) {
+		html += examples.bodyjs.map(function (js) {
 			return '<script src="' + js + '"></script>';
 		}).join('');
 
@@ -111,8 +110,8 @@ examples.lang = {
 		idoc.close();
 
 		// add default block styles to iframe dom
-		idoc.documentElement.setAttribute('style', examples.opts.htmlcss);
-		idoc.body.setAttribute('style', examples.opts.bodycss);
+		idoc.documentElement.setAttribute('style', examples.htmlcss);
+		idoc.body.setAttribute('style', examples.bodycss);
 
 		if (conf.width) style.width = String(conf.width);
 
@@ -136,6 +135,6 @@ examples.lang = {
 
 		resize();
 
-		setInterval(resize, 500);
+		setInterval(resize, 334);
 	}
 };

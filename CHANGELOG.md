@@ -1,3 +1,8 @@
+## 2.0.1 (2015-11-18)
+
+- Updated: Options are merged rather than split
+- Updated: Documentation
+
 ## 2.0.0 (2015-11-17)
 
 - Added: Options to control example

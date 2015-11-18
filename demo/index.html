@@ -2,7 +2,7 @@
 <title>mdcss GitHub</title>
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet">
-<script>examples={opts:{"base":"","target":"_self","css":["style.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"}}</script>
+<script>examples={"base":"","target":"_self","css":["style.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
 <header>
 	<nav>
 		<img src="mdcss-logo.png" alt="mdcss GitHub">
@@ -198,21 +198,21 @@ rendered as a living example on the page.</p>
 <p>An <code>example:html</code> code block
 generates an iframe using the contents of the code block, followed by the
 original code block. For example:</p>
-<pre><code class="lang-css">`​``example:html
-&lt;button&gt;Let’s see what this looks like&lt;/button&gt;
-`​``
+<pre><code class="lang-css">```example:html
+&lt;button&gt;This is a button&lt;/button&gt;
+```
 </code></pre>
 <p>is rendered as:</p>
-<pre><code class="lang-example:html">&lt;button&gt;Let’s see what this looks like&lt;/button&gt;
+<pre><code class="lang-example:html">&lt;button&gt;This is a button&lt;/button&gt;
 </code></pre>
 <p>An <code>example</code> code block generates an iframe using the contents of the code
 block without also rendering the original code block. For example:</p>
-<pre><code class="lang-css">`​``example
-&lt;button&gt;Let’s see what this looks like&lt;/button&gt;
-`​``
+<pre><code class="lang-css">```example
+&lt;button&gt;This is a button&lt;/button&gt;
+```
 </code></pre>
 <p>is rendered as:</p>
-<pre><code class="lang-example">&lt;button&gt;Let’s see what this looks like&lt;/button&gt;
+<pre><code class="lang-example">&lt;button&gt;This is a button&lt;/button&gt;
 </code></pre>
 
 				
@@ -223,7 +223,7 @@ block without also rendering the original code block. For example:</p>
 			<h3>Colors</h3>
 			<div>
 				<p>Color examples are generated with <code>example:color</code> code blocks. For example:</p>
-<pre><code class="lang-css">`​``example:color
+<pre><code class="lang-css">```example:color
 @color: #ffffff @name: White
 @color: #f8f8f8 @name: White Smoke
 @color: #e7e7e7 @name: Whisper
@@ -231,7 +231,7 @@ block without also rendering the original code block. For example:</p>
 @color: #565454 @name: Matterhorn
 @color: #4078c0 @name: Steel Blue
 @color: #333333 @name: Night Rider
-`​``
+```
 </code></pre>
 <p>is rendered as:</p>
 <pre><code class="lang-example:color">@color: #ffffff @name: White
@@ -257,8 +257,7 @@ block without also rendering the original code block. For example:</p>
 		<section id="headings">
 			<h4>Headings</h4>
 			<div>
-				<p>Headings match GitHub documentation conventions. In this theme, you can add
-<code>_example</code> to your code blocks to add a living example to your style guide.</p>
+				<p>Headings match GitHub documentation conventions.</p>
 <pre><code class="lang-example:html">&lt;h1&gt;Heading Level 1&lt;/h1&gt;
 &lt;h2&gt;Heading Level 2&lt;/h2&gt;
 &lt;h3&gt;Heading Level 3&lt;/h3&gt;
@@ -374,7 +373,7 @@ perferendis quam! Ullam, debitis ab maiores.</p>
 			</div>
 		</section>
 		
-	<footer>Last modified Tuesday, 17 November 2015 9:54
+	<footer>Last modified Wednesday, 18 November 2015 9:30
 </main>
 <script src="prism.js"></script>
 <script src="examples.js"></script>
