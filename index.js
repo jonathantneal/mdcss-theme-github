@@ -13,6 +13,12 @@ module.exports = function (themeopts) {
 	// set theme title
 	themeopts.title = themeopts.title || 'Style Guide';
 
+	// set theme css
+	themeopts.css = themeopts.css || ['style.css'];
+
+	// set theme css
+	themeopts.js = themeopts.js || [];
+
 	// set example conf
 	themeopts.examples = ext({
 		base:    '',

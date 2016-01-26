@@ -1,3 +1,9 @@
+## 2.1.0 (2016-01-26)
+
+- Added: Option to define the CSS files used by theme
+- Updated: Documentation
+- Updated: Dependencies
+
 ## 2.0.1 (2015-11-18)
 
 - Updated: Options are merged rather than split
