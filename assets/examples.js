@@ -52,7 +52,7 @@ examples.lang = {
 		}
 
 		function hex2rgb(hex) {
-			var bigint = parseInt(hex.slice(1), 16);
+			var bigint = parseInt(hex.slice(1).replace(/^([0-9a-f])([0-9a-f])([0-9a-f])$/i, '$1$1$2$2$3$3'), 16);
 			var r = (bigint >> 16) & 255;
 			var g = (bigint >> 8) & 255;
 			var b = bigint & 255;

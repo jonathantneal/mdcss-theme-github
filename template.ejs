@@ -27,7 +27,7 @@
 function menu(children, depth) {
 	%>
 	<ul>
-		<% if (depth < 3) children.forEach(function (child) {
+		<% if (depth < 3) children.sort(sort).forEach(function (child) {
 			if (child.name) {
 				%>
 				<li>
@@ -44,7 +44,7 @@ function menu(children, depth) {
 function sections(children, depth) {
 	depth = Math.max(Math.min(depth, 6), 1);
 
-	children.forEach(function (child) {
+	children.sort(sort).forEach(function (child) {
 		%>
 		<section<% if (child.name) { %> id="<%= child.name %>"<% } %>>
 			<% if (child.title) { %><%- '<h' + depth + '>' %><%= child.title %><%- '</h' + depth + '>' %><% } %>
@@ -65,6 +65,10 @@ function lastModified() {
 	var month = 'January February March April May June July August September October November December'.split(' ')[now.getMonth()];
 
 	return day + ', ' + now.getDate() + ' ' + month + ' ' + now.getFullYear() + ' ' + now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
+}
+
+function sort(childA, childB) {
+	return (childA.order || 0) - (childB.order || 0);
 }
 
 %>

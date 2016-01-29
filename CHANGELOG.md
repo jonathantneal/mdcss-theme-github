@@ -1,8 +1,14 @@
+## 2.2.0 (2016-01-29)
+
+- Added: Expand shorthand hex
+- Added: Sortable sections using `order: <number>`
+- Updated: Package dependencies
+
 ## 2.1.0 (2016-01-26)
 
 - Added: Option to define the CSS files used by theme
 - Updated: Documentation
-- Updated: Dependencies
+- Updated: Package dependencies
 
 ## 2.0.1 (2015-11-18)
 
