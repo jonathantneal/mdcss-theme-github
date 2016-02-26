@@ -67,6 +67,27 @@ The `color` keyword is used to generate a visual palette of colors. Arguments th
 	@color: #333333 @name: Night Rider
 	```
 
+#### Order
+
+The `order` heading detail is used to control the order of sections in the generated style guide. A negative order value will shift the item before non-ordered items, while a positive order value will push the item after non-ordered values.
+
+```css
+/*---
+section: First Section
+order: -1
+---
+```
+
+Attached to a subsection, the order detail will control the position of the subsection inside the section.
+
+```css
+/*---
+title:   Last Subsection
+section: Third Section
+order: 1
+---
+```
+
 
 ## Options
 
