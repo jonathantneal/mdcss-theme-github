@@ -20,7 +20,7 @@
   "devDependencies": {
     "chokidar": "^1.4.2",
     "eslint": "^1.10.3",
-    "mdcss": "^1.5.0",
+    "mdcss": "^1.5.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.4.0",
     "watch": "^0.17.1"
