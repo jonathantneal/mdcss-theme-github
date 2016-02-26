@@ -45,6 +45,11 @@
 				</li>
 				
 				<li>
+					<a href="#order"><span>Order</span></a>
+					
+				</li>
+				
+				<li>
 					<a href="#typography"><span>Typography</span></a>
 					
 	<ul>
@@ -248,6 +253,26 @@ block without also rendering the original code block. For example:</p>
 			</div>
 		</section>
 		
+		<section id="order">
+			<h3>Order</h3>
+			<div>
+				<p>The <code>order</code> heading detail is used to control the order of sections in the generated style guide. A negative order value will shift the item before non-ordered items, while a positive order value will push the item after non-ordered values.</p>
+<pre><code class="lang-css">/*---
+section: First Section
+order: -1
+---
+</code></pre>
+<p>Attached to a subsection, the order detail will control the position of the subsection inside the section.</p>
+<p>```css
+/*---
+title:   Last Subsection
+section: Third Section</p>
+<h2 id="order-1">order: 1</h2>
+
+				
+			</div>
+		</section>
+		
 		<section id="typography">
 			<h3>Typography</h3>
 			<div>
@@ -374,7 +399,7 @@ perferendis quam! Ullam, debitis ab maiores.</p>
 			</div>
 		</section>
 		
-	<footer>Last modified Friday, 29 January 2016 12:43
+	<footer>Last modified Friday, 26 February 2016 13:13</footer>
 </main>
 <script src="prism.js"></script>
 <script src="examples.js"></script>
