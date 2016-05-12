@@ -133,10 +133,8 @@ examples.lang = {
 			}
 		}
 
-		iwin.addEventListener('load', resize);
-
-		resize();
-
-		setInterval(resize, 334);
+    iwin.addEventListener('load', function () {
+      resize();
+    });
 	}
 };
