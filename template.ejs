@@ -9,36 +9,55 @@
 <% opts.js.forEach(function (src) {
 	%><script src="<%= src %>"></script><%
 }); %>
-<header>
-	<nav>
-		<img src="<%= opts.logo %>" alt="<%= opts.title %>">
-		<% menu(list, 1) %>
-	</nav>
+
+<header class="masthead">
+  <div class="container">
+    <a href="/" class="masthead-logo">
+      <img src="<%= opts.logo %>" alt="<%= opts.title %>" height="32"> <%= opts.title %>
+    </a>
+    <nav class="masthead-nav">
+      <!-- TODO Add Page Navigation -->
+    </nav>
+  </div>
 </header>
 
-<main>
-	<% sections(list, 2) %>
-	<footer>Last modified <%- lastModified() %></footer>
-</main>
+<div class="container">
+  <div class="columns docs-layout">
+    <div class="one-fourth column">
+      <% menu(list, 1) %>
+    </div>
+
+    <main class="three-fourths column markdown-body">
+      <% sections(list, 2) %>
+    </main>
+  </div>
+  <footer class="footer">
+    Last modified <%- lastModified() %>
+  </footer>
+</div>
 <script src="prism.js"></script>
 <script src="examples.js"></script>
 <script src="script.js"></script>
 <%
-
 function menu(children, depth) {
 	%>
-	<ul>
-		<% if (depth < 3) children.sort(sort).forEach(function (child) {
+    <nav class="menu docs-menu">
+		<% if (depth = 1) children.sort(sort).forEach(function (child) {
 			if (child.name) {
 				%>
-				<li>
-					<a href="#<%- child.name %>"><span><%= child.title %></span></a>
-					<% if (child.children) menu(child.children, depth + 1) %>
-				</li>
+        <a class="menu-heading" href="#<%- child.name %>"><%= child.title %></a>
 				<%
 			}
 		}); %>
-	</ul>
+		<% if (depth != 1 && depth < 3) children.sort(sort).forEach(function (child) {
+			if (child.name) {
+				%>
+        <a class="menu-item" href="#<%- child.name %>"><%= child.title %></a>
+        <% if (child.children) menu(child.children, depth + 1) %>
+				<%
+			}
+		}); %>
+    </nav>
 	<%
 }
 
