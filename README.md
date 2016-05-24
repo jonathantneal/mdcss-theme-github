@@ -1,6 +1,6 @@
 # mdcss GitHub
 
-<img align="right" width="96" height="96" src="https://jonathantneal.github.io/mdcss-theme-github/demo/mdcss-logo.png" title="mdcss logo">
+<img align="right" width="96" height="96" src="https://jonathantneal.github.io/mdcss-theme-github/demo/logo.png" title="mdcss logo">
 
 [![NPM Version][npm-img]][npm] [![Build Status][ci-img]][ci]
 
@@ -105,7 +105,7 @@ The page title to be used by the style guide.
 Type: `String`  
 Default: `'mdcss-logo.png'`
 
-<img src="https://jonathantneal.github.io/mdcss-theme-github/demo/mdcss-logo.png" width="96" height="96">
+<img src="https://jonathantneal.github.io/mdcss-theme-github/demo/logo.png" height="32">
 
 The page logo to be used by the style guide.
 

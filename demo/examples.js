@@ -22,21 +22,17 @@ examples.lang = {
 		function parseColor(color) {
 			var colorNode = document.createElement('div');
 
-			colorNode.className = 'color';
+			colorNode.className = 'swatch';
 
-			var swatchNode = colorNode.appendChild(document.createElement('div'));
-
-			swatchNode.className = 'color-swatch';
-
-			swatchNode.style.backgroundColor = color.color;
+			colorNode.style.backgroundColor = color.color;
 
 			var contrastColor = contrast(color.color);
 
-			swatchNode.style.color = contrastColor;
+			colorNode.style.color = contrastColor;
 
-			swatchNode.style.textShadow = '0 0 1px ' + (contrastColor === '#ffffff' ? '#000000' : '#ffffff');
+			colorNode.style.textShadow = '0 0 1px ' + (contrastColor === '#ffffff' ? '#000000' : '#ffffff');
 
-			swatchNode.appendChild(document.createTextNode(color.color));
+			colorNode.appendChild(document.createTextNode(color.color));
 
 			Object.keys(color).filter(function (key) { return key !== 'color' }).forEach(function (key) {
 				var propertyNode = colorNode.appendChild(document.createElement('div'));
@@ -74,8 +70,10 @@ examples.lang = {
 	html: function (pre, value, conf) {
 		// get wrap
 		var wrap = pre.parentNode;
+    pre.className = 'highlight';
 
 		var iframe = wrap.insertBefore(document.createElement('iframe'), pre);
+    iframe.className  = 'docs-example clearfix';
 		var style  = iframe.style;
 
 		// get iframe dom
@@ -113,6 +111,7 @@ examples.lang = {
 		iwin.addEventListener('load', function(){
 			idoc.documentElement.setAttribute('style', examples.htmlcss);
 			idoc.body.setAttribute('style', examples.bodycss);
+      iframe.setAttribute('class', 'docs-example clearfix');
 		})
 
 		if (conf.width) style.width = String(conf.width);

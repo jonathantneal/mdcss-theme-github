@@ -24,7 +24,9 @@
 <div class="container">
   <div class="columns docs-layout">
     <div class="one-fourth column">
-      <% menu(list, 1) %>
+      <nav class="menu docs-menu">
+        <% menu(list, 1) %>
+      </nav>
     </div>
 
     <main class="three-fourths column markdown-body">
@@ -41,23 +43,16 @@
 <%
 function menu(children, depth) {
 	%>
-    <nav class="menu docs-menu">
-		<% if (depth = 1) children.sort(sort).forEach(function (child) {
+		<% if (depth < 3) children.sort(sort).forEach(function (child) {
 			if (child.name) {
+        if (depth < 2) {modifier = "heading";}
+        if (depth > 1) {modifier = "item";}
 				%>
-        <a class="menu-heading" href="#<%- child.name %>"><%= child.title %></a>
-				<%
-			}
-		}); %>
-		<% if (depth != 1 && depth < 3) children.sort(sort).forEach(function (child) {
-			if (child.name) {
-				%>
-        <a class="menu-item" href="#<%- child.name %>"><%= child.title %></a>
+        <a class="menu-<%- modifier %>" href="#<%- child.name %>"><span><%= child.title %></span></a>
         <% if (child.children) menu(child.children, depth + 1) %>
 				<%
 			}
 		}); %>
-    </nav>
 	<%
 }
 
@@ -67,8 +62,9 @@ function sections(children, depth) {
 	children.sort(sort).forEach(function (child) {
 		%>
 		<section<% if (child.name) { %> id="<%= child.name %>"<% } %>>
-			<% if (child.title) { %><%- '<h' + depth + '>' %><%= child.title %><%- '</h' + depth + '>' %><% } %>
-			<div>
+			<% if (child.title) { %><%- '<h' + (depth - 1) + ' class="page-title">' %><%= child.title %><%- '</h' + (depth - 1) + '>' %><% } %>
+
+			<div class="markdown-body">
 				<%- child.content %>
 				<% if (child.children) sections(child.children, depth + 1) %>
 			</div>
