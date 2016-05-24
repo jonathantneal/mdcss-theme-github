@@ -1,6 +1,6 @@
 # mdcss GitHub
 
-<img align="right" width="96" height="96" src="https://jonathantneal.github.io/mdcss-theme-github/demo/logo.png" title="mdcss logo">
+<img align="right" height="32" src="https://jonathantneal.github.io/mdcss-theme-github/demo/logo.png" title="mdcss logo">
 
 [![NPM Version][npm-img]][npm] [![Build Status][ci-img]][ci]
 
