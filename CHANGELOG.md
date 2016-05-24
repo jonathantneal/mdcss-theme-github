@@ -1,3 +1,7 @@
+## 2.3.0 (2016-05-24)
+- Changed: Theme now uses PrimerCSS
+- Changed: All markup to match Primer class names
+
 ## 2.2.0 (2016-01-29)
 
 - Added: Expand shorthand hex
