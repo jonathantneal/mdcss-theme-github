@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	Array.prototype.forEach.call(document.querySelectorAll('pre code[class^="lang"]'), function (code) {
 		// set pre, wrap, opts, and get meta data from code
 		var pre  = code.parentNode;
-		var wrap = pre.parentNode.insertBefore(document.createElement('figure'), pre);
 		var conf = {};
 		var text = String(code.textContent || code.innerText || '');
 
@@ -24,16 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		code.removeAttribute('class');
 
-		wrap.appendChild(pre);
-
 		// conditionally syntax highlight code
 		if (conf.lang in Prism.languages) code.innerHTML = Prism.highlight(text, Prism.languages[conf.lang]);
 
 		// conditionally create code examples
 		if (conf.example in examples.lang) {
 			examples.lang[conf.example](pre, text, conf);
-
-			if (!(conf.lang in Prism.languages)) wrap.removeChild(pre);
 		}
 	});
 });
