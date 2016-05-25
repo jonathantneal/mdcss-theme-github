@@ -1,90 +1,111 @@
 <!doctype html>
-<title><%- opts.title %></title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<% opts.css.forEach(function (href) {
-	%><link href="<%= href %>" rel="stylesheet"><%
-}); %>
-<script>examples=<%- JSON.stringify(opts.examples) %>;</script>
-<% opts.js.forEach(function (src) {
-	%><script src="<%= src %>"></script><%
-}); %>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%- opts.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% opts.css.forEach(function (href) {
+      %><link href="<%= href %>" rel="stylesheet"><%
+    }); %>
+    <script>examples=<%- JSON.stringify(opts.examples) %>;</script>
+    <% opts.js.forEach(function (src) {
+      %><script src="<%= src %>"></script><%
+    }); %>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="container">
+        <a href="/" class="masthead-logo">
+          <img src="<%= opts.logo %>" alt="<%= opts.title %>" height="32"> <%= opts.title %>
+        </a>
+        <nav class="masthead-nav">
+          <!-- TODO Add Page Navigation -->
+        </nav>
+      </div>
+    </header>
 
-<header class="masthead">
-  <div class="container">
-    <a href="/" class="masthead-logo">
-      <img src="<%= opts.logo %>" alt="<%= opts.title %>" height="32"> <%= opts.title %>
-    </a>
-    <nav class="masthead-nav">
-      <!-- TODO Add Page Navigation -->
-    </nav>
-  </div>
-</header>
+    <div class="container">
+      <div class="columns docs-layout">
+        <div class="one-fourth column">
+          <nav class="menu docs-menu">
+            <% menu(list, 1) %>
+          </nav>
+        </div>
 
-<div class="container">
-  <div class="columns docs-layout">
-    <div class="one-fourth column">
-      <nav class="menu docs-menu">
-        <% menu(list, 1) %>
-      </nav>
+        <main class="three-fourths column markdown-body">
+          <% sections(list, 2) %>
+        </main>
+      </div>
+      <footer class="footer">
+        Last modified <%- lastModified() %>
+      </footer>
     </div>
+    <script src="prism.js"></script>
+    <script src="examples.js"></script>
+    <script src="script.js"></script>
+    <% analytics(opts.analytics) %>
+  </body>
+</html>
 
-    <main class="three-fourths column markdown-body">
-      <% sections(list, 2) %>
-    </main>
-  </div>
-  <footer class="footer">
-    Last modified <%- lastModified() %>
-  </footer>
-</div>
-<script src="prism.js"></script>
-<script src="examples.js"></script>
-<script src="script.js"></script>
 <%
+function analytics(ua) {
+  %>
+  <% if (ua) {
+     %>
+    <script>
+      window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+      ga('create','<%- ua %>','auto');ga('send','pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <%
+  }
+}
+
 function menu(children, depth) {
-	%>
-		<% if (depth < 3) children.sort(sort).forEach(function (child) {
-			if (child.name) {
+  %>
+    <% if (depth < 3) children.sort(sort).forEach(function (child) {
+      if (child.name) {
         if (depth < 2) {modifier = "heading";}
         if (depth > 1) {modifier = "item";}
-				%>
+        %>
         <a class="menu-<%- modifier %>" href="#<%- child.name %>"><span><%= child.title %></span></a>
         <% if (child.children) menu(child.children, depth + 1) %>
-				<%
-			}
-		}); %>
-	<%
+        <%
+      }
+    }); %>
+  <%
 }
 
 function sections(children, depth) {
-	depth = Math.max(Math.min(depth, 6), 1);
+  depth = Math.max(Math.min(depth, 6), 1);
 
-	children.sort(sort).forEach(function (child) {
-		%>
-		<section<% if (child.name) { %> id="<%= child.name %>"<% } %>>
-			<% if (child.title) { %><%- '<h' + (depth - 1) + ' class="page-title">' %><%= child.title %><%- '</h' + (depth - 1) + '>' %><% } %>
+  children.sort(sort).forEach(function (child) {
+    %>
+    <section<% if (child.name) { %> id="<%= child.name %>"<% } %>>
+      <% if (child.title) { %><%- '<h' + (depth - 1) + ' class="page-title">' %><%= child.title %><%- '</h' + (depth - 1) + '>' %><% } %>
 
-			<div class="markdown-body">
-				<%- child.content %>
-				<% if (child.children) sections(child.children, depth + 1) %>
-			</div>
-		</section>
-		<%
-	});
+      <div class="markdown-body">
+        <%- child.content %>
+        <% if (child.children) sections(child.children, depth + 1) %>
+      </div>
+    </section>
+    <%
+  });
 }
 
 function lastModified() {
-	var now = new Date();
+  var now = new Date();
 
-	var day = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ')[now.getDay()];
+  var day = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ')[now.getDay()];
 
-	var month = 'January February March April May June July August September October November December'.split(' ')[now.getMonth()];
+  var month = 'January February March April May June July August September October November December'.split(' ')[now.getMonth()];
 
-	return day + ', ' + now.getDate() + ' ' + month + ' ' + now.getFullYear() + ' ' + now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
+  return day + ', ' + now.getDate() + ' ' + month + ' ' + now.getFullYear() + ' ' + now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
 }
 
 function sort(childA, childB) {
-	return (childA.order || 0) - (childB.order || 0);
+  return (childA.order || 0) - (childB.order || 0);
 }
 
 %>
