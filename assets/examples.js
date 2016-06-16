@@ -115,6 +115,7 @@ examples.lang = {
 		})
 
 		if (conf.width) style.width = String(conf.width);
+		style.resize = 'both';
 
 		// set iframe height based on content
 		var documentElement = idoc.documentElement;
