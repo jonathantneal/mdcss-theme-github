@@ -5,68 +5,92 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ## [2.3.0] 2016-05-24
-- Changed: Theme now uses PrimerCSS
-- Changed: All markup to match Primer class names
+
+## Changed
+- Theme now uses PrimerCSS
+- All markup to match Primer class names
 
 ## [2.2.0] 2016-01-29
 
-- Added: Expand shorthand hex
-- Added: Sortable sections using `order: <number>`
-- Updated: Package dependencies
+## Added
+- Expand shorthand hex
+- Sortable sections using `order: <number>`
+
+## Changed
+- Package dependencies
 
 ## [2.1.0] 2016-01-26
 
-- Added: Option to define the CSS files used by theme
-- Updated: Documentation
-- Updated: Package dependencies
+## Added
+- Option to define the CSS files used by theme
+
+## Changed
+- Documentation
+- Package dependencies
 
 ## [2.0.1] 2015-11-18
 
-- Updated: Options are merged rather than split
-- Updated: Documentation
+## Changed
+- Options are merged rather than split
+- Documentation
 
 ## [2.0.0] 2015-11-17
 
+## Added
 - Added: Options to control example
-- Updated: Examples syntax
-- Updated: Documentation
-- Updated: mdcss logo
+
+## Changed
+- Examples syntax
+- Documentation
+- mdcss logo
 
 ## [1.3.4] 2015-11-09
 
-- Updated: Improvements to iframe resizing
+## Changed
+- Improvements to iframe resizing
 
 ## [1.3.3] 2015-11-09
 
-- Updated: Use mdcss 1.2.0
-- Updated: Use `textContent` to read examples in Firefox
+## Changed
+- Use mdcss 1.2.0
+- Use `textContent` to read examples in Firefox
 
 ## [1.3.2] 2015-11-09
 
-- Updated: Improvements to iframe resizing
+## Changed
+- Improvements to iframe resizing
 
 ## [1.3.1] 2015-11-09
 
-- Updated: Example iframes use transparent background
+## Changed
+- Example iframes use transparent background
 
 ## [1.3.0] 2015-11-09
 
-- Added: Option to specify `exampleCSS` file used by examples
+## Added
+- Option to specify `exampleCSS` file used by examples
 
 ## [1.2.1] 2015-11-04
 
-- Added: Last updated footer
-- Updated: watch functionality
+## Added
+- Last updated footer
+
+## Changed
+- Watch functionality
 
 ## [1.2.0] 2015-11-04
 
-- Added: `color_example` code block
-- Added: `npm run watch` development mode
-- Updated: documentation
+## Added
+- `color_example` code block
+- `npm run watch` development mode
+
+## Changed
+- Documentation
 
 ## [1.0.1] 2015-10-30
 
-- Removed: `fs-wishlist` dependency
+## Removed
+- `fs-wishlist` dependency
 
 ## [1.0.0] 2015-10-30
 
