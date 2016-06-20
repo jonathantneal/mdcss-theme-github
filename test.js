@@ -8,7 +8,7 @@ test('mdcss-theme-github', function (t) {
 	t.plan(1);
 
 	var message = 'Test mdcss GitHub';
-	var options = { theme: plugin({ title: 'mdcss GitHub' }), destination: 'demo' };
+	var options = { theme: plugin({ title: 'GitHub Theme', color: '#222222' }), destination: 'demo' };
 	var warning = 0;
 	var warningMsg = message + ' (# of warnings)';
 

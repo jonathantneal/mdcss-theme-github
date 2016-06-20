@@ -19,6 +19,9 @@ module.exports = function (themeopts) {
 	// set theme css
 	themeopts.js = themeopts.js || [];
 
+  // set theme masthead color
+	themeopts.color = themeopts.color || ['#4078c0'];
+
 	// set example conf
 	themeopts.examples = ext({
 		base:    '',
