@@ -18,8 +18,7 @@ section: mdcss GitHub
 ---
 Add [mdcss] and [mdcss GitHub] to your build tool:
 ```bash
-npm install mdcss --save-dev
-npm install mdcss-theme-github --save-dev
+npm install mdcss mdcss-theme-github --save-dev
 ```
 Whenever [mdcss] is used, reference this theme.
 ```js
@@ -275,6 +274,18 @@ perferendis quam! Ullam, debitis ab maiores.
 .docs-example {
   display: block;
   width: 100%;
+}
+
+.swatch {
+  padding: .25em;
+  margin: 0 .3em .3em 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.color-property {
+  font-size: 80%;
 }
 
 /**
