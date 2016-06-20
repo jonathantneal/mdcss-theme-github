@@ -11,8 +11,7 @@
 Add [mdcss] and [mdcss GitHub] to your build tool:
 
 ```bash
-npm install mdcss --save-dev
-npm install mdcss-theme-github --save-dev
+npm install mdcss mdcss-theme-github --save-dev
 ```
 
 Whenever [mdcss] is used, reference this theme.
@@ -37,20 +36,6 @@ Specifying a language like `example:html` generates an example that is then foll
 
 	```example:html
 	<button>This is a button</button>
-	```
-
-Arguments that follow `,name:value` may be used to customize the example iframes. For instance, the width or height of an example might be specified so that its contents adhere to a particular breakpoint.
-
-	```example,width=1024px
-	<p>The desktop view.</p>
-	```
-
-	```example,width=768px
-	<p>The tablet view.</p>
-	```
-
-	```example,width=320px
-	<p>The mobile view.</p>
 	```
 
 #### Color
