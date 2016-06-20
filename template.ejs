@@ -20,7 +20,9 @@
           <img src="<%= opts.logo %>" alt="<%= opts.title %>" height="32"> <%= opts.title %>
         </a>
         <nav class="masthead-nav">
-          <!-- TODO Add Page Navigation -->
+            <% opts.nav.forEach(function(link) { %>
+                <a href="<%= link.url %>" target="_blank"><%= link.name %></a>
+            <% }); %>
         </nav>
       </div>
     </header>

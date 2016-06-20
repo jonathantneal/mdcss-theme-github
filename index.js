@@ -22,6 +22,9 @@ module.exports = function (themeopts) {
   // set theme masthead color
 	themeopts.color = themeopts.color || ['#4078c0'];
 
+  // set navigation links
+	themeopts.nav = themeopts.nav || [];
+
 	// set example conf
 	themeopts.examples = ext({
 		base:    '',
