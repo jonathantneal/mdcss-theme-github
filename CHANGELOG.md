@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.4.0] 2016-06-20
+
 ## Added
 - Google Analytics option
 - Masthead color option
@@ -109,7 +111,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Added
 - Initial release
 
-[Unreleased]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.3.0...HEAD
+[Unreleased]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.4.0...HEAD
+[2.4.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.3.0...2.4.0
 [2.3.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.2.0...2.3.0
 [2.2.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.0.1...2.1.0
