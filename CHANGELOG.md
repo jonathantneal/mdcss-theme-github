@@ -4,6 +4,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added
+- anchor.js
+
+## Changed
+- octicons location
+
 ## [2.4.0] 2016-06-20
 
 ## Added
