@@ -74,7 +74,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Initial release
 
 [Unreleased]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.3.0...HEAD
-[2.3.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.0.0...2.3.0
+[2.3.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.2.0...2.3.0
+[2.2.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.1.0...2.2.0
+[2.1.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.0.1...2.1.0
+[2.0.1]: https://github.com/jonathantneal/mdcss-theme-github/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/jonathantneal/mdcss-theme-github/compare/1.3.4...2.0.0
 [1.3.4]: https://github.com/jonathantneal/mdcss-theme-github/compare/1.3.3...1.3.4
 [1.3.3]: https://github.com/jonathantneal/mdcss-theme-github/compare/1.3.2...1.3.3
