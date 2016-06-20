@@ -4,6 +4,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added
+- Google Analytics option
+- Masthead color option
+- Query string caching
+- New change log format
+
+## Changed
+- Swatch styles
+
+## Removed
+- Figure element from examples
+
 ## [2.3.0] 2016-05-24
 
 ## Changed
