@@ -72,9 +72,21 @@ examples.lang = {
 		var wrap = pre.parentNode;
     pre.className = 'highlight';
 
-		var iframe = wrap.insertBefore(document.createElement('iframe'), pre);
-    iframe.className  = 'docs-example clearfix';
+    var preview = wrap.insertBefore(document.createElement('div'), pre);
+    preview.className  = 'docs-example clearfix';
+
+    var resize = preview.appendChild(document.createElement('div'));
+    resize.className = 'docs-resize';
+
+		var resizeLeft = resize.appendChild(document.createElement('span'));
+    resizeLeft.className = 'c-resize--left';
+
+    var iframe = resize.appendChild(document.createElement('iframe'));
+    iframe.className = 'docs-iframe';
 		var style  = iframe.style;
+
+    var resizeRight = resize.appendChild(document.createElement('span'));
+    resizeRight.className = 'c-resize--right';
 
 		// get iframe dom
 		var iwin = iframe.contentWindow;
@@ -112,7 +124,7 @@ examples.lang = {
 			idoc.documentElement.setAttribute('style', examples.htmlcss);
 			idoc.body.setAttribute('style', examples.bodycss);
       iframe.setAttribute('class', 'docs-example clearfix');
-		})
+		});
 
 		if (conf.width) style.width = String(conf.width);
 
