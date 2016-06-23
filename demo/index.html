@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>GitHub Theme</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet">
+    <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet">
     <script>examples={"base":"","target":"_self","css":["style.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
     
   </head>
@@ -396,13 +396,14 @@ perferendis quam! Ullam, debitis ab maiores.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Monday, 20 June 2016 15:21
+        Last modified Thursday, 23 June 2016 13:21
       </footer>
     </div>
     <script src="prism.js?871234"></script>
     <script src="examples.js?873428"></script>
     <script src="script.js?02359872"></script>
     <script src="anchor.min.js?225234"></script>
+    <script src="interact.min.js?8552934"></script>
     <script>
      anchors.options = {
          placement: 'left',
@@ -410,6 +411,48 @@ perferendis quam! Ullam, debitis ab maiores.</p>
          class: 'anchor-link'
      };
      anchors.add('h2, h3');
+
+     /* interact('.docs-resize')
+      *   .resizable({
+      *     edges: {
+      *       left: '.c-resize--left',
+      *       right: '.c-resize--right',
+      *       bottom: false,
+      *       top: false
+      *     },
+      *     onmove: function (e) {
+      *       var width = e.rect.width,
+      *         windowWidth = $(window).width();
+
+      *       if (width < 160) {
+      *         width = 160;
+      *       } else if ((width * 2) + 100 > windowWidth) {
+      *         width = (windowWidth - 100) / 2;
+      *       }
+
+      *       $('.docs-example').find('docs-resize').addClass('resize-overlay');
+      *       $('.docs-resize').style.width = (width * 2) + 'px';
+      *     },
+      *     onend: function () {
+      *       $('.docs-example').find('docs-resize').removeClass('resize-overlay');
+      *     }
+      *   })
+      *   .on('resizemove', function (event) {
+      *     var target = event.target,
+      *         x = (parseFloat(target.getAttribute('data-x')) || 0);
+
+      *     // update the element's style
+      *     target.style.width  = event.rect.width + 'px';
+
+      *     // translate when resizing from top or left edges
+      *     x += event.deltaRect.left;
+
+      *     target.style.webkitTransform = target.style.transform =
+      *       'translateX(' + x + 'px)';
+
+      *     target.setAttribute('data-x', x);
+      *     target.textContent = Math.round(event.rect.width);
+      *   });*/
     </script>
     
   
