@@ -123,7 +123,7 @@ examples.lang = {
 		iwin.addEventListener('load', function(){
 			idoc.documentElement.setAttribute('style', examples.htmlcss);
 			idoc.body.setAttribute('style', examples.bodycss);
-      iframe.setAttribute('class', 'docs-example clearfix');
+      iframe.setAttribute('class', 'docs-iframe clearfix');
 		});
 
 		if (conf.width) style.width = String(conf.width);
