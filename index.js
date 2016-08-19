@@ -3,6 +3,15 @@ const ejs = require('ejs');
 const ext = require('object-assign');
 const fs = require('fs');
 const path = require('path');
+const fontColorContrast = require('font-color-contrast');
+
+const fontContrast = function(color) {
+  //HACK: check if shorthand (#fff)
+  if (color.length === 4) {
+    color = `${color}${color[3]}${color[3]}${color[3]}`
+  }
+  return fontColorContrast(color);
+}
 
 module.exports = function (themeopts) {
   // set theme options object
@@ -58,7 +67,7 @@ module.exports = function (themeopts) {
           title: 'Colors',
           name: 'colors',
           content: Object.keys(themeopts.colors).map((color) => (
-            `<div class="color-swatch" style="background-color: ${themeopts.colors[color]}; display: inline-block; height: 150px; width: 150px;"><div class="color-value">${themeopts.colors[color]}</div><div class="color-name">${color}</div></div>`
+            `<div class="color-swatch" style="background-color: ${themeopts.colors[color]}; color: ${fontContrast(themeopts.colors[color])}; display: inline-block; height: 150px; width: 150px;"><div class="color-value">${themeopts.colors[color]}</div><div class="color-name">${color}</div></div>`
           )).join('')
         });
       }
