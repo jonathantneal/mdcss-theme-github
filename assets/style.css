@@ -49,6 +49,14 @@
   font-size: 80%;
 }
 
+.color-swatch {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: 1px 1px #ccc;
+  font-size: 14px;
+}
+
 /*---
 section: mdcss GitHub
 ---
