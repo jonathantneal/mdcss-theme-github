@@ -45,6 +45,35 @@ module.exports = function (themeopts) {
 		// set theme options
 		docs.themeopts = themeopts;
 
+		if (themeopts.colors || themeopts.variables) {
+			const styleguide = {
+				title: 'Styleguide',
+				name: 'styleguide',
+				children: []
+			}
+			if (themeopts.colors) {
+				styleguide.children.push({
+					section: 'Styleguide',
+					title: 'Colors',
+					name: 'colors',
+					content: Object.keys(themeopts.colors).map((color) => (
+						`<div class="color-swatch" style="background-color: ${themeopts.colors[color]}; display: inline-block; height: 150px; width: 150px;"><div class="color-value">${themeopts.colors[color]}</div><div class="color-name">${color}</div></div>`
+					)).join('')
+				});
+			}
+			if (themeopts.variables) {
+				styleguide.children.push({
+					section: 'Styleguide',
+					title: 'Variables',
+					name: 'variables',
+					content: `<pre class="highlight"><code>${Object.keys(themeopts.variables).map((key) => (
+						`${key}: ${themeopts.variables[key]}`
+					)).join('\n')}</code></pre>`
+				});
+			}
+			docs.list.unshift(styleguide);
+		}
+
 		// return promise
 		return new Promise(function (resolve, reject) {
 			// read template
