@@ -1,18 +1,18 @@
 {
-  "name": "mdcss-theme-github",
+  "name": "mdcss-theme-clientkit",
   "version": "2.4.2",
-  "description": "GitHub flavored theme for mdcss",
+  "description": "Clientkit theme for mdcss",
   "keywords": [
     "mdcss",
     "mdcss-theme",
-    "github",
+    "clientkit",
     "theme"
   ],
-  "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)",
-  "license": "CC0-1.0",
-  "repository": "jonathantneal/mdcss-github-theme",
-  "bugs": "https://github.com/jonathantneal/mdcss-github-theme/issues",
-  "homepage": "https://github.com/jonathantneal/mdcss-github-theme#readme",
+  "author": "First+Third <code@firstandthird.com> (http://firstandthird.com)",
+  "license": "MIT",
+  "repository": "firstandthird/mdcss-theme-clientkit",
+  "bugs": "https://github.com/firstandthird/mdcss-theme-clientkit/issues",
+  "homepage": "https://github.com/firstandthird/mdcss-theme-clientkit#readme",
   "dependencies": {
     "ejs": "^2.4.1",
     "object-assign": "^4.0.1"
