@@ -14,7 +14,7 @@ module.exports = function (themeopts) {
 	themeopts.title = themeopts.title || 'Style Guide';
 
 	// set theme css
-	themeopts.css = themeopts.css || ['primer.css', 'style.css', 'octicons/octicons.css'];
+	themeopts.css = themeopts.css || ['primer.css', 'style.css'];
 
 	// set theme css
 	themeopts.js = themeopts.js || [];
