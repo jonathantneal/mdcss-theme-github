@@ -57,6 +57,11 @@
   font-size: 14px;
 }
 
+.menu-container {
+  position: fixed;
+  right: 0;
+}
+
 /*---
 section: mdcss GitHub
 ---

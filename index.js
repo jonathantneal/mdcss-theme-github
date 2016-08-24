@@ -67,7 +67,7 @@ module.exports = function (themeopts) {
           title: 'Colors',
           name: 'colors',
           content: Object.keys(themeopts.colors).map((color) => (
-            `<div class="color-swatch" style="background-color: ${themeopts.colors[color]}; color: ${fontContrast(themeopts.colors[color])}; display: inline-block; height: 150px; width: 150px;"><div class="color-value">${themeopts.colors[color]}</div><div class="color-name">${color}</div></div>`
+            `<div class="color-swatch" style="background-color: ${themeopts.colors[color]}; color: ${fontContrast(themeopts.colors[color])}; display: inline-block; height: 75px; width: 150px;"><div class="color-value">${themeopts.colors[color]}</div><div class="color-name">${color}</div></div>`
           )).join('')
         });
       }
