@@ -1,4 +1,10 @@
 
+3.3.0 / 2016-08-24
+==================
+
+  * moved menu to right and float. shrink color swatch
+  * resizable iframes
+
 3.2.0 / 2016-08-22
 ==================
 
