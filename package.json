@@ -1,29 +1,35 @@
 {
-  "name": "mdcss-theme-github",
-  "version": "2.4.2",
-  "description": "GitHub flavored theme for mdcss",
+  "name": "mdcss-theme-clientkit",
+  "version": "3.3.0",
+  "description": "Clientkit theme for mdcss",
   "keywords": [
     "mdcss",
     "mdcss-theme",
-    "github",
+    "clientkit",
     "theme"
   ],
-  "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)",
-  "license": "CC0-1.0",
-  "repository": "jonathantneal/mdcss-github-theme",
-  "bugs": "https://github.com/jonathantneal/mdcss-github-theme/issues",
-  "homepage": "https://github.com/jonathantneal/mdcss-github-theme#readme",
+  "author": "First+Third <code@firstandthird.com> (http://firstandthird.com)",
+  "license": "MIT",
+  "repository": "firstandthird/mdcss-theme-clientkit",
+  "bugs": "https://github.com/firstandthird/mdcss-theme-clientkit/issues",
+  "homepage": "https://github.com/firstandthird/mdcss-theme-clientkit#readme",
   "dependencies": {
     "ejs": "^2.4.1",
+    "font-color-contrast": "^1.0.3",
     "object-assign": "^4.0.1"
   },
   "devDependencies": {
     "chokidar": "^1.4.2",
-    "eslint": "^1.10.3",
     "mdcss": "^1.5.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.4.0",
-    "watch": "^0.17.1"
+    "watch": "^0.17.1",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-config-firstandthird": "^2.0.0",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2"
   },
   "scripts": {
     "lint": "eslint . --ignore-path .eshintignore",

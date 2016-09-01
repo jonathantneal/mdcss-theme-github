@@ -145,7 +145,7 @@ examples.lang = {
 		}
 
     iwin.addEventListener('load', function () {
-      resize();
+      //resize();
     });
 	}
 };

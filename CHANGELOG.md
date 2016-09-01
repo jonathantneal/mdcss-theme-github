@@ -1,3 +1,24 @@
+
+3.3.0 / 2016-08-24
+==================
+
+  * moved menu to right and float. shrink color swatch
+  * resizable iframes
+
+3.2.0 / 2016-08-22
+==================
+
+  * removed last modified
+
+3.1.0 / 2016-08-19
+==================
+
+  * better styles for swatches
+  * check contrast for swatches
+
+
+# OLD VERSION:
+
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).

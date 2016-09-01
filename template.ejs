@@ -17,7 +17,7 @@
     <header class="masthead" style="background-color: <%= opts.color %>;">
       <div class="container">
         <a href="/" class="masthead-logo">
-          <img src="<%= opts.logo %>" alt="<%= opts.title %>" height="32"> <%= opts.title %>
+          <%= opts.title %>
         </a>
         <nav class="masthead-nav">
             <% opts.nav.forEach(function(link) { %>
@@ -29,7 +29,7 @@
 
     <div class="container">
       <div class="columns docs-layout">
-        <div class="one-fourth column">
+        <div class="one-fourth column menu-container">
           <nav class="menu docs-menu">
             <% menu(list, 1) %>
           </nav>
@@ -39,9 +39,6 @@
           <% sections(list, 2) %>
         </main>
       </div>
-      <footer class="footer">
-        Last modified <%- lastModified() %>
-      </footer>
     </div>
     <script src="prism.js?871234"></script>
     <script src="examples.js?873428"></script>
