@@ -132,7 +132,7 @@ examples.lang = {
 		var documentElement = idoc.documentElement;
 		var scrollHeight;
 
-		function resize() {
+		function resizeIframe() {
 			var currentScrollHeight = documentElement.scrollHeight;
 
 			if (scrollHeight !== currentScrollHeight) {
@@ -145,7 +145,7 @@ examples.lang = {
 		}
 
     iwin.addEventListener('load', function () {
-      resize();
+      resizeIframe();
     });
 	}
 };
