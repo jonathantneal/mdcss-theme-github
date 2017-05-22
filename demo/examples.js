@@ -75,17 +75,17 @@ examples.lang = {
     var preview = wrap.insertBefore(document.createElement('div'), pre);
     preview.className  = 'docs-example clearfix';
 
-    var resize = preview.appendChild(document.createElement('div'));
-    resize.className = 'docs-resize';
+    var resizeDiv = preview.appendChild(document.createElement('div'));
+    resizeDiv.className = 'docs-resize';
 
-		var resizeLeft = resize.appendChild(document.createElement('span'));
+		var resizeLeft = resizeDiv.appendChild(document.createElement('span'));
     resizeLeft.className = 'c-resize--left';
 
-    var iframe = resize.appendChild(document.createElement('iframe'));
+    var iframe = resizeDiv.appendChild(document.createElement('iframe'));
     iframe.className = 'docs-iframe';
 		var style  = iframe.style;
 
-    var resizeRight = resize.appendChild(document.createElement('span'));
+    var resizeRight = resizeDiv.appendChild(document.createElement('span'));
     resizeRight.className = 'c-resize--right';
 
 		// get iframe dom
@@ -132,7 +132,7 @@ examples.lang = {
 		var documentElement = idoc.documentElement;
 		var scrollHeight;
 
-		function resize() {
+		function resizeIFrame() {
 			var currentScrollHeight = documentElement.scrollHeight;
 
 			if (scrollHeight !== currentScrollHeight) {
@@ -145,7 +145,7 @@ examples.lang = {
 		}
 
     iwin.addEventListener('load', function () {
-      resize();
+      resizeIFrame();
     });
 	}
 };
