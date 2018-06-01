@@ -162,18 +162,18 @@ function getSorted(list) {
   // Map sort value to index if doesn't have an order. This makes it so if no order is provided,
   // the item's original position in the array is preserved
   const mapped = list.map(function (value, index) {
-    return {value: value.order || value.order === 0 ? value.order : index, index: index};
+    return {order: value.order || value.order === 0 ? value.order : index, index: index};
   });
   mapped.sort(sort);
 
-  // Use the mapped sort as the new sort order
+  // Return a copy of the original array mapped to the new sort order
   return mapped.map(function (el) {
     return list[el.index];
   });
 }
 
 function sort(childA, childB) {
-  return childA.value - childB.value;
+  return (childA.order || 0) - (childB.order || 0);
 }
 
 %>
