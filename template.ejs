@@ -161,11 +161,19 @@ function lastModified() {
 function getSorted(list) {
   // Map sort value to index if doesn't have an order. This makes it so if no order is provided,
   // the item's original position in the array is preserved
-  const mapped = list.map((value, index) => {
+  const mapped = list.map(function (value, index) {
     return {value: value.hasOwnProperty('order') ? value.order : index, index};
   });
-  mapped.sort((childA, childB) => childA.value - childB.value);
-  return mapped.map((el) => list[el.index]);
+  mapped.sort(sort);
+
+  // Use the mapped sort as the new sort order
+  return mapped.map(function (el) {
+    return list[el.index];
+  });
+}
+
+function sort(childA, childB) {
+  return childA.value - childB.value;
 }
 
 %>
