@@ -118,7 +118,7 @@ function analytics(ua) {
 
 function menu(children, depth) {
   %>
-    <% if (depth < 3) children.slice().sort(sort).forEach(function (child) {
+    <% if (depth < 3) getSorted(children).forEach(function (child) {
       if (child.name) {
         if (depth < 2) {modifier = "heading";}
         if (depth > 1) {modifier = "item";}
@@ -134,7 +134,7 @@ function menu(children, depth) {
 function sections(children, depth) {
   depth = Math.max(Math.min(depth, 6), 1);
 
-  children.slice().sort(sort).forEach(function (child) {
+  getSorted(children).forEach(function (child) {
     %>
     <section<% if (child.name) { %> id="<%= child.name %>"<% } %>>
       <% if (child.title) { %><%- '<h' + (depth - 1) + ' class="page-title">' %><%= child.title %><%- '</h' + (depth - 1) + '>' %><% } %>
@@ -158,8 +158,14 @@ function lastModified() {
   return day + ', ' + now.getDate() + ' ' + month + ' ' + now.getFullYear() + ' ' + now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
 }
 
-function sort(childA, childB) {
-  return (childA.order || 0) - (childB.order || 0);
+function getSorted(list) {
+  // Map sort value to index if doesn't have an order. This makes it so if no order is provided,
+  // the item's original position in the array is preserved
+  const mapped = list.map((value, index) => {
+    return {value: value.hasOwnProperty('order') ? value.order : index, index};
+  });
+  mapped.sort((childA, childB) => childA.value - childB.value);
+  return mapped.map((el) => list[el.index]);
 }
 
 %>
